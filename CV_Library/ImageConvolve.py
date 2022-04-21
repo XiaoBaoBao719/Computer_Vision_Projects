@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import scipy as sc
-import cv2 as cv
+import cv2
 from scipy import ndimage
 from skimage import filters
 from matplotlib import pyplot as plt
@@ -45,3 +45,14 @@ class ImageConvlve():
             print("m: ", m, "\t n: ", n, "\t sum: ", sum)
 
             image[m + 1, n + 1] = sum
+    
+    def convert2Grey(self, image_path):
+        original_img = cv2.imread(image_path)
+        grey_img = cv2.cvtColor(original_img, cv2.COLOR2GRAY)
+
+        print('image matrix size: ', grey_img.shape)
+        print('\n First 5 columns and rows of the image matrix: \n', grey_img[:5, :5])
+        cv2.imwrite('TopLeft5x5.jpg', grey_img[:5, :5])
+        return grey_img
+
+        
