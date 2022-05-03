@@ -33,6 +33,25 @@ def dist2(x, c):
 
     return n2
 
+def eucl_dist(x, c):
+    """
+    Gets the Euclidean distance between two points in two matrices
+    """
+    assert x.shape[1] == c.shape[1], \
+        'Data dimension does not match dimension of centers'
+    
+    # dist = np.sqrt((x - c) ** 2)
+    # dist = np.sqrt(np.sum((x - c) ** 2))
+    dist = np.sum((x - c) ** 2)
+    print("dist", dist)
+    return np.asarray(dist, dtype=np.float32)
+
+foo_1 = np.array([[2, 2]])
+foo_2 = np.array([[4, 4]])
+
+_dist1 = np.array([[2,2], [1,1]])
+_dist2 = np.array([[4,4], [5,5]])
+eucl_dist(_dist1, _dist2)
 
 def gen_dgauss(sigma):
     """
@@ -205,6 +224,7 @@ def harris(im, sigma, thresh=None, radius=None):
     dx = np.tile([[-1, 0, 1]], [3, 1])
     dy = dx.T
 
+    print(dx, dy)
     Ix = convolve2d(im, dx, 'same')
     Iy = convolve2d(im, dy, 'same')
 
