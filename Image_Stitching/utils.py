@@ -46,12 +46,12 @@ def eucl_dist(x, c):
     print("dist", dist)
     return np.asarray(dist, dtype=np.float32)
 
-foo_1 = np.array([[2, 2]])
-foo_2 = np.array([[4, 4]])
+# foo_1 = np.array([[2, 2]])
+# foo_2 = np.array([[4, 4]])
 
-_dist1 = np.array([[2,2], [1,1]])
-_dist2 = np.array([[4,4], [5,5]])
-eucl_dist(_dist1, _dist2)
+# _dist1 = np.array([[2,2], [1,1]])
+# _dist2 = np.array([[4,4], [5,5]])
+# eucl_dist(_dist1, _dist2)
 
 def gen_dgauss(sigma):
     """
